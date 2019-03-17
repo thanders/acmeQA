@@ -25,6 +25,7 @@ If prerequisites are installed, clone project from the shell in the project's ro
 
 **sqlite**
 Run from shell `sqlite3`
+
 Open database `.open database/database.sqlite`
 
 
