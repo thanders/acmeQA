@@ -5,11 +5,15 @@ A basic PHP Laravel survey webApp with functionality for management admin and u
 
 ### Prerequisites
 
-Install PHP:
+Install PHP
 `apt install php`
 
-Install Composer:
+Install Composer
 `composer global require "laravel/installer=~1.1"`
+
+Install PHP SQLite3
+`sudo apt-get install php7.1-sqlite3`
+
 
 
 ## Start using the PHP local development server
