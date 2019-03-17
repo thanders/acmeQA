@@ -29,4 +29,6 @@ Run from shell `sqlite3`
 
 Open database `.open database/database.sqlite`
 
+Improve sqlite shell display `.header on`, `.mode column`
+
 
