@@ -18,4 +18,13 @@ Install PHP SQLite3
 
 ## Start using the PHP local development server
 
-If prerequisites are installed, clone project from the shell in the project's root directory execute `php artisan serve` and access in webserver at `http://localhost:8000/` 
+If prerequisites are installed, clone project from the shell in the project's root directory execute `php artisan serve` and access in webserver at `http://localhost:8000/`
+
+
+### Useful commands
+
+**sqlite**
+Run from shell `sqlite3`
+Open database `.open database/database.sqlite`
+
+
