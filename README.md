@@ -12,6 +12,6 @@ Install Composer:
 `composer global require "laravel/installer=~1.1"`
 
 
-## Start using the local development server
+## Start using the PHP local development server
 
 If prerequisites are installed, clone project from the shell in the project's root directory execute `php artisan serve` and access in webserver at `http://localhost:8000/` 
