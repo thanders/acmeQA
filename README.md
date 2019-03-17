@@ -14,4 +14,4 @@ Install Composer:
 
 ## Start using the local development server
 
-If prerequisites are installed, from shell, execute `php artisan serve` and access in webserver at `http://localhost:8000/` 
+If prerequisites are installed, clone project and from shell execute `php artisan serve` and access in webserver at `http://localhost:8000/` 
