@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Loads the admin control panel
+Route::get('/adminControlPanel', function () {
+    return view('adminControlPanel');
+});
+
+// loads the user response area
+Route::get('/userResponseArea', function () {
+    return view('userResponseArea');
+});
+
+// Redirect post messages under '/store' to the relevant controller (/app/Http/Controllers/AnswerCreate)
+Route::post('/store', "AnswerCreate@store");
+
+

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Dingle</title>
+        <title>User Response Area</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,14 +81,17 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    ACME limited <br> Q & A </br>
+                    User Response Area
                 </div>
 
                 <div class="links">
                     <a href="/adminControlPanel">Admin Control Panel</a>
-                    <a href="/userResponseArea">User Response Area</a>
+                    <a href="/">Landing Page</a>
                 </div>
             </div>
         </div>
+
+
+
     </body>
 </html>
