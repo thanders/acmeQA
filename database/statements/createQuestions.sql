@@ -1,4 +1,5 @@
 CREATE TABLE questions (
-                      Question Varchar,
-                      AnswerType Varchar
+        Question Varchar,
+        AnswerType Varchar,
+	Solution Varchar
 );
