@@ -95,17 +95,17 @@
 
             <h2>Admin Control Panel</h2>
 
-            <h3>Questions</h3>
+            <h3>Create quiz questions</h3>
 
 
             <?php
 
 
             // define global variables
-            global $question;
-            global $selectionType;
+            $question=null;
+            $selectionType=null;
 
-            if (isset($_GET['question'])){
+            if (isset($_GET['question']) && (isset($_GET['answerType']))){
                 $question = $_GET['question'];
             }
 
@@ -114,19 +114,22 @@
             }
 
             // if Question set and answerType is MCQ
-            if (isset($_GET['question']) && $_GET['answerType'] == 'mcq') {
+            if (isset($_GET['question']) && isset($_GET['answerType']) && ($_GET['answerType']=='mcq-radio' || $_GET['answerType']=='mcq-dropDown') && !isset($_GET['choicesNumber'])){
 
                 echo "Question: $question <br>";
 
                 echo "<form action='' method='get'>";
 
                 echo "Number of choices <input type='number' name='choicesNumber'/>";
+                echo "<input type='hidden'  name='question' value='$question'>";
+                echo "<input type='hidden'  name='answerType' value='$selectionType'>";
                 echo "<button type='submit'>Submit choices</button>";
                 echo "</form>";
+
             }
 
             // if question is set and answer type is not equal to mcq
-            elseif(isset($_GET['question']) && $_GET['answerType'] != 'mcq'){
+            elseif(isset($_GET['question']) && ($_GET['answerType'] != 'mcq-radio' && $_GET['answerType'] != 'mcq-dropDown')){
 
                 // Form action to post values to /store route
                 $action=URL::to('/store');
@@ -135,6 +138,7 @@
 
                 echo "Question: $question <br>";
                 echo "Question format: $selectionType<br>";
+
 
                 // if answerType is number
                 if ($selectionType == 'number'){
@@ -153,10 +157,13 @@
                 echo "<input type='hidden'  name='_token' value='$token'>";
                 echo"<button type='submit'>Create question</button>";
                 echo "</form>";
+
             }
 
+
+
             // else if number of choices has been set
-            elseif (isset($_GET['choicesNumber'])){
+            elseif (isset($_GET['choicesNumber']) && (isset($_GET['question']))){
 
                 echo "Question: $question<br>";
 
@@ -164,15 +171,18 @@
 
                 echo "Specify the $choicesNumber options<br>";
 
-                $test = URL::to('/store');
+                $qSubmission = URL::to('/store');
 
-                echo "<form class='' action='$test' method='post'>";
+                echo "<form class='' action='$qSubmission' method='post'>";
 
                 for ($i = 0; $i <$choicesNumber; $i++) {
                     $opt = $i+1;
-                    echo "Option $opt <input type='text' name=\"choice$choicesNumber\"/><br>";
+                    echo "Option $opt <input type='text' name='choice$opt'><br>";
                 }
 
+                echo "<input type='hidden'  name='question' value='$question'>";
+                echo "<input type='hidden'  name='answerType' value='$selectionType'>";
+                echo "<input type='hidden'  name='mcqOptions' value='$opt'>";
                 $token =csrf_token();
                 echo "<input type='hidden' name='_token' value='$token'>";
                 echo"<button type='submit'>Create question</button>";
@@ -180,19 +190,24 @@
                 echo "</form>";
             }
 
-
-                // if selection type is empty
+                // initial form to get question and answerType
             else{
                     echo "<form class='' action='' method='get'>";
                     echo "Question <input type='text' name='question' value='' placeholder='Enter the question'><br>";
-                    echo "Question Type <input type='radio' name='answerType' value='mcq'> Multiple Choice";
-                    echo "<input type='radio' name='answerType' value='text'> Text";
-                    echo "<input type='radio' name='answerType' value='number'> Number";
+                    echo "<input type='radio' name='answerType' value='mcq-radio'> Multiple Choice - Radio<br>";
+                    echo "<input type='radio' name='answerType' value='mcq-dropDown'> Multiple Choice - Drop-down<br>";
+                    echo "<input type='radio' name='answerType' value='text'> Text<br>";
+                    echo "<input type='radio' name='answerType' value='number'> Number<br>";
                     echo "<button type='submit'>Submit answer</button>";
                     echo "</form>";
-                }
+
+
+            }
 
             ?>
+
+            <!-- Include a form reset button -->
+            @include('resetButton');
 
         </div>
     </body>
