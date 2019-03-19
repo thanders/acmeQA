@@ -21,7 +21,7 @@
 
     <div class="mainUI">
 
-    <h3>QA Structure Maintenance</h3>
+    <h2>Create new questions</h2>
 
 
     <?php
@@ -135,7 +135,69 @@
     <!-- Include a form reset button -->
     @include('resetButton')
 
+        <h2>Manage questions</h2>
+
+        <h4>Text & number</h4>
+        <table border = 1>
+            <tr>
+                <th>Question</th>
+                <th>AnswerType</th>
+                <th>Solution</th>
+                <th>RowID</th>
+                <th>Delete</th>
+            </tr>
+            @foreach ($questions as $question)
+                <tr>
+                    <td>{{ $question->Question }}</td>
+                    <td>{{ $question->AnswerType }}</td>
+                    <td>{{ $question->Solution }}</td>
+                    <td>{{ $question->rowid }}</td>
+                    <td> @include('deleteButton')</td> // Include delete button
+                </tr>
+            @endforeach
+        </table>
+
+
+        <h4>Multiple choice questions</h4>
+
+            <table border = 1>
+
+                <tr>
+                    <th>Question</th>
+                    <th>AnswerType</th>
+                    <th>Options</th>
+                    <th>Solution</th>
+                    <th>RowID</th>
+                    <th>Delete</th>
+                </tr>
+            @foreach ($MCQ as $questionMCQ)
+                <tr>
+                    <td>{{ $questionMCQ->Question }}</td>
+                    <td>{{ $questionMCQ->AnswerType }}</td>
+                    <td>@foreach ($mcqOptions as $Options) {{ $Options-> mcqOption }}@endforeach</td>
+                    <td>{{ $questionMCQ->Solution }}</td>
+                    <td>{{ $questionMCQ->rowid }}</td>
+                    <td> @include('deleteButtonMCQ')</td>
+                </tr>
+            @endforeach
+        </table>
+
+        <form action="/truncateQuestions" method="POST">
+            <input type='hidden'  name='truncate' value='yes'>
+            <?php
+
+            $token =csrf_token();
+            echo "<input type='hidden' name='_token' value='$token'>";
+
+            ?>
+            <button>Delete all questions</button>
+        </form>
     </div>
 
     </body>
+
+
+
+
+
 </html>

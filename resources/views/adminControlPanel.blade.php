@@ -21,9 +21,9 @@
         @include('adminMenu')
 
 
-        <div class="main">
+        <div class="mainUI">
 
-
+            Welcome to the Admin Control Planel. Please choose a link from the menu above.
 
         </div>
     </body>

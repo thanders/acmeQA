@@ -26,8 +26,8 @@ Route::get('/userResponseArea', function () {
 });
 
 // loads the Admin QA Structure Maintenance view
-Route::get('/qaMaintenance', function () {
-    return view('qaMaintenance');
+Route::get('/cpMaintenance', function () {
+    return view('cpMaintenance');
 });
 
 // loads the Admin Response Dashboard view
@@ -37,5 +37,11 @@ Route::get('/cpResponseDashboard', function () {
 
 // Redirect post messages under '/store' to the relevant controller (/app/Http/Controllers/AnswerCreate)
 Route::post('/store', "AnswerCreate@store");
+
+Route::get('cpMaintenance','getDataController@questions');
+
+Route::post('/truncateQuestions','truncateDataController@truncateQuestions');
+
+Route::post('/deleteQuestion/{rowid}','deleteQuestionController@deleteQuestion');
 
 

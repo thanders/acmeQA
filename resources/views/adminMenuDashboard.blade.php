@@ -16,7 +16,7 @@
     <ul class="topnav">
         <li><a href="/">Home</a></li>
         <li><a href="/adminControlPanel">Admin Control Panel</a></li>
-        <li><a href="/qaMaintenance">Q&A Structure Maintenance</a></li>
+        <li><a href="/cpMaintenance">Q&A Structure Maintenance</a></li>
         <li><a class="active" href="/cpResponseDashboard">Response Dashboard</a></li>
 
     </ul>

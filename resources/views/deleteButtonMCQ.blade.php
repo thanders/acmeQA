@@ -12,13 +12,17 @@
     </head>
     <body>
 
-    <?php
-        // Reset button as a new form
-        echo "<form class='' action='/cpMaintenance'>";
-            echo "<button type='submit'>Reset</button>";
-            echo "</form>";
+    <form action="/deleteQuestion/{{ $questionMCQ->rowid }}" method="POST">
 
-    ?>
+        <?php
+
+        $token =csrf_token();
+        echo "<input type='hidden' name='_token' value='$token'>";
+
+        ?>
+
+        <button>Delete</button>
+    </form>
 
 
     </body>
