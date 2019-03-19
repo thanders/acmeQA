@@ -152,13 +152,15 @@
                     <td>{{ $question->AnswerType }}</td>
                     <td>{{ $question->Solution }}</td>
                     <td>{{ $question->rowid }}</td>
-                    <td> @include('deleteButton')</td> // Include delete button
+                    <td> @include('deleteButton')</td>
                 </tr>
             @endforeach
         </table>
 
 
         <h4>Multiple choice questions</h4>
+
+        <div class="table">
 
             <table border = 1>
 
@@ -170,17 +172,22 @@
                     <th>RowID</th>
                     <th>Delete</th>
                 </tr>
-            @foreach ($MCQ as $questionMCQ)
+
+                @foreach ($MCQ as $questionMCQ)
+
                 <tr>
                     <td>{{ $questionMCQ->Question }}</td>
                     <td>{{ $questionMCQ->AnswerType }}</td>
-                    <td>@foreach ($mcqOptions as $Options) {{ $Options-> mcqOption }}@endforeach</td>
+                    <!-- Loop through options array and print out if Qid == rowid -->
+                    <td><?php foreach ($mcqOptions as $Options) { if($Options-> Qid == $questionMCQ->rowid) {echo $Options-> mcqOption.', ';}} ?> </td>
                     <td>{{ $questionMCQ->Solution }}</td>
                     <td>{{ $questionMCQ->rowid }}</td>
                     <td> @include('deleteButtonMCQ')</td>
                 </tr>
-            @endforeach
-        </table>
+                @endforeach
+            </table>
+
+        </div>
 
         <form action="/truncateQuestions" method="POST">
             <input type='hidden'  name='truncate' value='yes'>
@@ -192,6 +199,7 @@
             ?>
             <button>Delete all questions</button>
         </form>
+
     </div>
 
     </body>

@@ -14,21 +14,20 @@ class deleteQuestionController extends Controller {
 
         $AnswerType = DB::table('questions')->where('rowid', [$rowid])->value('AnswerType');
 
-        print_r($AnswerType);
-
-        echo $AnswerType;
-
-
+        // If not equal to mcq, delete from questions table
         if ($AnswerType != 'mcq-dropDown' && $AnswerType != 'mcq-radio' ) {
             DB::delete('DELETE FROM questions WHERE rowid = ?', [$rowid]);
-            echo "yes";
 
         }
 
+        // Else delete from questions and mcqOptions table
         else{
 
             DB::table('mcqOptions')->where('Qid', '=', [$rowid])->delete();
             DB::delete('DELETE FROM questions WHERE rowid = ?', [$rowid]);
         }
 
-}}
+        return redirect()->to('/cpMaintenance');
+
+    }
+}
