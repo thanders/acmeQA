@@ -1,0 +1,70 @@
+
+html, body {
+    position:relative;
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 10vh;
+    margin: 0;
+}
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position:relative;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 660px) {
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
+
+
+.full-height {
+    height: 20vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 50px;
+}
+
+.m-b-md {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.mainUI{
+    margin-top: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+}

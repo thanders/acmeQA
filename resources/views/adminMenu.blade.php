@@ -3,10 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Admin Control Panel</title>
-
         <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
+
+        <title>Control Panel - QA Structure Maintenance</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -14,17 +13,11 @@
     </head>
     <body>
 
-        <!-- Include admin menu title -->
-        @include('adminMenuTitle')
+    <ul class="topnav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/qaMaintenance">Q&A Structure Maintenance</a></li>
+        <li><a href="/cpResponseDashboard">Response Dashboard</a></li>
+    </ul>
 
-        <!-- Include admin menu -->
-        @include('adminMenu')
-
-
-        <div class="main">
-
-
-
-        </div>
     </body>
 </html>

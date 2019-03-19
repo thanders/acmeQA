@@ -25,6 +25,16 @@ Route::get('/userResponseArea', function () {
     return view('userResponseArea');
 });
 
+// loads the Admin QA Structure Maintenance view
+Route::get('/qaMaintenance', function () {
+    return view('qaMaintenance');
+});
+
+// loads the Admin Response Dashboard view
+Route::get('/cpResponseDashboard', function () {
+    return view('cpResponseDashboard');
+});
+
 // Redirect post messages under '/store' to the relevant controller (/app/Http/Controllers/AnswerCreate)
 Route::post('/store', "AnswerCreate@store");
 
