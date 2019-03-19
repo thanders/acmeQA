@@ -19,7 +19,7 @@ class deleteQuestionController extends Controller {
         echo $AnswerType;
 
 
-        if ($AnswerType != 'mcq-dropDown') {
+        if ($AnswerType != 'mcq-dropDown' && $AnswerType != 'mcq-radio' ) {
             DB::delete('DELETE FROM questions WHERE rowid = ?', [$rowid]);
             echo "yes";
 
