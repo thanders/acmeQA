@@ -101,3 +101,21 @@ input[type=radio] {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
+
+ul.survey {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul.survey li { margin: 5px;}
+
+input.survey {
+    width: 200px;
+    height: 25px;
+    padding: 0px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}

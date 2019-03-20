@@ -20,7 +20,7 @@ class AnswerCreate extends Controller {
 
             $mcqOptions = ($request-> input('mcqOptions'));
 
-            // Loop through the number of mcq Optionsa and insert options into mcqOptions table
+            // Loop through the number of mcq Options and insert options into mcqOptions table
             for ($i = 1; $i <=$mcqOptions; $i++) {
                 echo "<br>option  number $i";
                 $OptID = DB::table('mcqOptions')->insertGetId(['Qid' => $Qid, 'mcqOption' => $request->input("choice".$i."")]);

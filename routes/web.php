@@ -38,6 +38,7 @@ Route::get('/cpResponseDashboard', function () {
 // Redirect post messages under '/store' to the relevant controller (/app/Http/Controllers/AnswerCreate)
 Route::post('/store', "AnswerCreate@store");
 
+// get questions to cpMaintenance
 Route::get('cpMaintenance','getDataController@questions');
 
 Route::post('/truncateQuestions','truncateDataController@truncateQuestions');
@@ -45,6 +46,15 @@ Route::post('/truncateQuestions','truncateDataController@truncateQuestions');
 Route::post('/deleteQuestion/{rowid}','deleteQuestionController@deleteQuestion');
 
 Route::post('/updateQuestion/','updateQuestionController@updateQuestion');
+
+// get questions to User response area
+Route::get('/userResponseArea','userSurvey@questions');
+
+
+// Post survey submission from form to controller
+Route::post('/surveySubmit/','surveySubmitController@insertUserSubmission');
+
+
 
 
 
