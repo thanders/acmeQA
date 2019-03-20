@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
 
-        <title>Control Panel - QA Structure Maintenance</title>
+        <title>User Response Area</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -13,18 +13,14 @@
     </head>
     <body>
 
-    <!-- Include admin menu title -->
-    @include('menu/adminMenuTitle')
+    <div class="flex-center">
 
-    <!-- Include admin menu -->
-    @include('menu.adminMenuDashboard')
-
-
-    Control Panel - Response Dashboard
-
-
-
-
+        <div class="content">
+            <div class="title m-b-md">
+                User Response Area
+            </div>
+        </div>
+    </div>
 
     </body>
 </html>

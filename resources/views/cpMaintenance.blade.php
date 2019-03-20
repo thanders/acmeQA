@@ -14,10 +14,10 @@
     <body>
 
         <!-- Include admin menu title -->
-        @include('adminMenuTitle')
+        @include('menu/adminMenuTitle')
 
         <!-- Include admin menu -->
-        @include('adminMenuMaintenance')
+        @include('menu.adminMenuMaintenance')
 
     <div class="mainUI">
 

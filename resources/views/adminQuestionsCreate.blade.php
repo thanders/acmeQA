@@ -48,7 +48,7 @@ echo "<input type='hidden'  name='_token' value='$token'>";
 // Submission buttons
 echo "<ul class='submission'>";
 echo "<li><button type='submit'>Create question</button></li>";
-echo "<li>"?> @include('resetButton')<?php echo "</li>";
+echo "<li>"?> @include('buttons.resetButton')<?php echo "</li>";
 echo"</ul>";
 
 
@@ -98,7 +98,7 @@ echo "<input type='radio' name='answerType' value='number'> Number<br>";
 // Submission buttons
 echo "<ul class='submission'>";
 echo "<li><button type='submit'>Create question</button></li>";
-echo "<li>"?> @include('resetButton')<?php echo "</li>";
+echo "<li>"?> @include('buttons.resetButton')<?php echo "</li>";
 echo"</ul>";
 echo "</form>";
 

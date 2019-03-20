@@ -13,18 +13,10 @@
     </head>
     <body>
 
-    <!-- Include admin menu title -->
-    @include('menu/adminMenuTitle')
-
-    <!-- Include admin menu -->
-    @include('menu.adminMenuDashboard')
-
-
-    Control Panel - Response Dashboard
-
-
-
-
+    <ul class="topnav">
+        <li><a href="/">Home</a></li>
+        <li><a class="active" href="/userResponseArea">User Response Area</a></li>
+    </ul>
 
     </body>
 </html>

@@ -15,10 +15,10 @@
     <body>
 
         <!-- Include admin menu title -->
-        @include('adminMenuTitle')
+        @include('menu/adminMenuTitle')
 
         <!-- Include admin menu -->
-        @include('adminMenu')
+        @include('menu.adminMenu')
 
 
         <div class="mainUI">

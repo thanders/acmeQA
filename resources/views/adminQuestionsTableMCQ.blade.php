@@ -37,7 +37,7 @@
                 <td><?php foreach ($mcqOptions as $Options) { if($Options-> Qid == $questionMCQ->rowid) {echo $Options-> mcqOption.', ';}} ?> </td>
                 <td>{{ $questionMCQ->rowid }}</td>
                 <td> @include('updateQuestionMCQForm')</td>
-                <td> @include('deleteButtonMCQ')</td>
+                <td> @include('buttons.deleteButtonMCQ')</td>
             </tr>
         @endforeach
     </table>

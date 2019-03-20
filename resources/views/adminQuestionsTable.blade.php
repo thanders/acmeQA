@@ -31,7 +31,7 @@
                 <td>{{ $question->AnswerType }}</td>
                 <td>{{ $question->rowid }}</td>
                 <td> @include('updateQuestionForm')</td>
-                <td> @include('deleteButton')</td>
+                <td> @include('buttons.deleteButton')</td>
 
             </tr>
     @endforeach
