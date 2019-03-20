@@ -44,5 +44,7 @@ Route::post('/truncateQuestions','truncateDataController@truncateQuestions');
 
 Route::post('/deleteQuestion/{rowid}','deleteQuestionController@deleteQuestion');
 
+Route::post('/updateQuestion/','updateQuestionController@updateQuestion');
+
 
 
