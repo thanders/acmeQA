@@ -104,24 +104,12 @@
             $token =csrf_token();
             echo "<input type='hidden' name='_token' value='$token'>";
 
-            //  This was a real pain:
-            $data= json_decode( json_encode($count), true);
-
-            $count =$data['COUNT(Question)'];
-
-            echo "<input type='hidden' name='numQuestions' value='$count'>";
-
             // Submission buttons
             echo "<ul class='submission'>";
                 echo "<li><button type='submit' value='submit'>Submit survey</button></li>";
                 echo "<li>"?> @include('buttons.resetButton')<?php echo "</li>";
                 echo"</ul>";
                 echo "</form>";
-
-
-
-
-
 
              ?>
         </div>

@@ -16,27 +16,23 @@ class surveySubmitController extends Controller {
         $question = $request->input('question');
         $qID = $request->input('qID');
         $response = $request->input('response23');
-        $numQuestions = $request->input('numQuestions');
 
-        echo "Question: $question<br>";
-        echo "qID: $qID<br>";
-        echo "Response: $response<br>";
-        echo "Number of Questions: $numQuestions";
 
-        $rowidarr = DB::select('select COUNT(rowid) from Questions;');
 
-        $data= json_decode( json_encode($rowidarr), true);
+        $rowidarr = DB::select('select rowid from Questions;');
 
-        //$count =$data['COUNT(Question)'];
-        print_r($data);
-        //echo "count again: $data";
+        // Check to make sure posted requests exist for each question in the database, if true, insert responses for those questions
+        foreach ($rowidarr as $rowid ) {
 
-        $rowidSize =sizeof($rowidarr);
 
-        for ($i = 0; $i <= $rowidSize; $i++) {
-            echo "The number is: $i <br>";
-            //$Qid = DB::table('responses')->insertGetId(['ResponseID' => "response$i", 'AnswerType' => $request-> input('answerType'), 'Solution' => $request-> input('solution')]);
-        }
+                if ("response{$rowid->rowid}"){
+                    $responseID = $rowid->rowid;
+                    $response = "response{$rowid->rowid}";
+                    DB::table('responses')->insert(['ResponseID' => $responseID, 'Response' => $request->input($response)]);
+                }
+            }
+
+
         //return redirect()->to('/cpMaintenance');
 
     }

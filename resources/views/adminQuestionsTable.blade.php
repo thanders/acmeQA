@@ -36,8 +36,6 @@
             </tr>
     @endforeach
 
-    <!--  <td><input type="{{ $question->AnswerType }}"></td>-->
-
     </table>
 
 

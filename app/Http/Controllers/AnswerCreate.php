@@ -13,7 +13,7 @@ class AnswerCreate extends Controller {
     public function store(Request $request){
 
         // Insert variables from form (post) into questions table
-        $Qid = DB::table('questions')->insertGetId(['Question' => $request-> input('question'), 'AnswerType' => $request-> input('answerType'), 'Solution' => $request-> input('solution')]);
+        $Qid = DB::table('questions')->insertGetId(['Question' => $request-> input('question'), 'AnswerType' => $request-> input('answerType')]);
 
         // Check if mcqOptions exists - Obtain user-inputted data from request method:
         if ($request-> input('mcqOptions')){
