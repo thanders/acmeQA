@@ -22,10 +22,10 @@
 
         <div class="mainUI">
 
-            @if (\Session::has('success'))
+            @if (\Session::has('submissionStatus'))
                 <div class="alert alert-success">
 
-                    {{ \Session::get('success')[0] }}
+                    {{ \Session::get('submissionStatus')['responseText'] }}
 
                 </div>
 
