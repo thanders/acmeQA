@@ -7,20 +7,20 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 
-class truncateDataController extends Controller
+class truncateResponsesController extends Controller
 {
 
     // Truncate the data the questions and mcqOptions tables
-    public function truncateQuestions(Request $request) {
+    public function truncateResponses(Request $request) {
 
         // print_r($request->input());
 
         if ($request-> input('truncate')){
 
-            DB::table('questions')->truncate();
-            DB::table('mcqOptions')->truncate();
-
+            DB::table('responses')->truncate();
         }
 
         return redirect()->back();
+
+
 }}

@@ -32,6 +32,7 @@
 
         <div class="table">
 
+            <!-- include the questions table -->
             @include('adminQuestionsTable')
 
         </div>
@@ -39,23 +40,13 @@
         <h4>Multiple choice questions</h4>
 
         <div class="table">
-
+        <!-- include the MCQ questions table -->
             @include('adminQuestionsTableMCQ')
 
         </div>
 
-
-
-        <form action="/truncateQuestions" method="POST">
-            <input type='hidden'  name='truncate' value='yes'>
-            <?php
-
-            $token =csrf_token();
-            echo "<input type='hidden' name='_token' value='$token'>";
-
-            ?>
-            <button>Delete all questions</button>
-        </form>
+        <!-- Include the button to delete all questions -->
+        @include('buttons/deleteButtonAllQuest')
 
     </div>
 

@@ -43,6 +43,8 @@ Route::get('cpMaintenance','getDataController@questions');
 
 Route::post('/truncateQuestions','truncateDataController@truncateQuestions');
 
+Route::post('/truncateResponses','truncateResponsesController@truncateResponses');
+
 Route::post('/deleteQuestion/{rowid}','deleteQuestionController@deleteQuestion');
 
 Route::post('/updateQuestion/','updateQuestionController@updateQuestion');

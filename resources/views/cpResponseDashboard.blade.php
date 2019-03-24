@@ -23,7 +23,11 @@
 
     <h3> Control Panel - Response Dashboard </h3>
 
-    Number of individual survey submissions: <b>{{ $stats['numResponses'] }}</b>
+        Number of individual survey submissions: <b>{{ $stats['numResponses'] }}</b>
+
+
+        <!-- Include the button to delete all questions -->
+        @include('buttons/deleteButtonAllResponses')
 
     </div>
 

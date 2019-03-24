@@ -89,20 +89,18 @@ elseif (isset($_GET['choicesNumber']) && (isset($_GET['question']))){
 
 // initial form to get question and answerType
 else{
-echo "<form class='' action='' method='get'>";
-echo "Question <input type='text' name='question' value='' placeholder='Enter the question' required><br>";
-echo "<input type='radio' name='answerType' value='mcq-radio' required> Multiple Choice - Radio<br>";
-echo "<input type='radio' name='answerType' value='mcq-dropDown' required> Multiple Choice - Drop-down<br>";
-echo "<input type='radio' name='answerType' value='text' required> Text<br>";
-echo "<input type='radio' name='answerType' value='number'> Number<br>";
-// Submission buttons
-echo "<ul class='submission'>";
-echo "<li><button type='submit'>Create question</button></li>";
-echo "<li>"?> @include('buttons.resetButton')<?php echo "</li>";
-echo"</ul>";
-echo "</form>";
-
-
+    echo "<form class='' action='' method='get'>";
+    echo "Question <input type='text' name='question' value='' placeholder='Enter the question' required><br>";
+    echo "<input type='radio' name='answerType' value='mcq-radio' required> Multiple Choice - Radio<br>";
+    echo "<input type='radio' name='answerType' value='mcq-dropDown' required> Multiple Choice - Drop-down<br>";
+    echo "<input type='radio' name='answerType' value='text' required> Text<br>";
+    echo "<input type='radio' name='answerType' value='number'> Number<br>";
+    // Submission buttons
+    echo "<ul class='submission'>";
+    echo "<li><button type='submit'>Create question</button></li>";
+    echo "<li>"?> @include('buttons.resetButton')<?php echo "</li>";
+    echo"</ul>";
+    echo "</form>";
 }
 
 ?>
