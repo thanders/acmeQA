@@ -12,26 +12,25 @@
     </head>
     <body>
 
-    <table border = 1>
-        <tr>
-            <th colspan="3">View</th>
-            <th colspan="3">Update</th>
+    <table class="admin">
+        <tr class="admin">
+            <th class="admin" colspan="3">View</th>
+            <th class="admin" colspan="3">Update</th>
         </tr>
-        <tr>
-            <th>Question</th>
-            <th>AnswerType</th>
-            <th>RowID</th>
-            <th>Update Question</th>
-            <th colspan="2">Modify</th>
+
+        <tr class="adminSubHeading">
+            <th class="adminSubHeading">Question</th>
+            <th class="adminSubHeading">AnswerType</th>
+            <th class="adminSubHeading">Update Question</th>
+            <th class="adminSubHeading" colspan="2">Modify</th>
 
         </tr>
         @foreach ($questions as $question)
-            <tr>
-                <td>{{ $question->Question }}</td>
-                <td>{{ $question->AnswerType }}</td>
-                <td>{{ $question->rowid }}</td>
-                <td> @include('updateQuestionForm')</td>
-                <td> @include('buttons.deleteButton')</td>
+            <tr class="admin">
+                <td class="admin">{{ $question->Question }}</td>
+                <td class="admin">{{ $question->AnswerType }}</td>
+                <td class="admin"> @include('updateQuestionForm')</td>
+                <td class="admin"> @include('buttons.deleteButton')</td>
 
             </tr>
     @endforeach

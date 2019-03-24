@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
 
         <title>User Response Area</title>
 
@@ -12,32 +13,30 @@
     </head>
     <body>
 
-    <table border = 1>
+    <table class="admin">
 
-        <tr>
-            <th colspan="4">View</th>
-            <th colspan="3">Update</th>
+        <tr class="admin">
+            <th class="admin" colspan="4">View</th>
+            <th class="admin" colspan="3">Update</th>
         </tr>
 
-        <tr>
-            <th>Question</th>
-            <th>AnswerType</th>
-            <th>Options</th>
-            <th>RowID</th>
-            <th>Update Question</th>
-            <th colspan="2">Modify</th>
+        <tr class="admin">
+            <th class="adminSubHeading" >Question</th>
+            <th class="adminSubHeading">AnswerType</th>
+            <th class="adminSubHeading">Options</th>
+            <th class="adminSubHeading">Update Question</th>
+            <th class="adminSubHeading" colspan="2">Modify</th>
         </tr>
 
         @foreach ($MCQ as $questionMCQ)
 
-            <tr>
-                <td>{{ $questionMCQ->Question }}</td>
-                <td>{{ $questionMCQ->AnswerType }}</td>
+            <tr class="admin">
+                <td class="admin">{{ $questionMCQ->Question }}</td>
+                <td class="admin">{{ $questionMCQ->AnswerType }}</td>
                 <!-- Loop through options array and print out if Qid == rowid -->
-                <td><?php foreach ($mcqOptions as $Options) { if($Options-> Qid == $questionMCQ->rowid) {echo $Options-> mcqOption.', ';}} ?> </td>
-                <td>{{ $questionMCQ->rowid }}</td>
-                <td> @include('updateQuestionMCQForm')</td>
-                <td> @include('buttons.deleteButtonMCQ')</td>
+                <td class="admin"><?php foreach ($mcqOptions as $Options) { if($Options-> Qid == $questionMCQ->rowid) {echo $Options-> mcqOption.', ';}} ?> </td>
+                <td class="admin"> @include('updateQuestionMCQForm')</td>
+                <td class="admin"> @include('buttons.deleteButtonMCQ')</td>
             </tr>
         @endforeach
     </table>
