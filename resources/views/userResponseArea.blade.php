@@ -36,7 +36,6 @@
 
                 Please fill out the questions below.
 
-
                 @foreach ($questions as $question)
 
                     <?php

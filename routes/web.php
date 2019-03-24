@@ -51,6 +51,10 @@ Route::post('/updateQuestion/','updateQuestionController@updateQuestion');
 Route::get('/userResponseArea','userSurvey@questions');
 
 
+
+// get questions to User response area
+Route::get('/cpResponseDashboard','adminResponseDashboard@statsResponseDashboard');
+
 // Post survey submission from form to controller
 Route::post('/surveySubmit/','surveySubmitController@insertUserSubmission');
 

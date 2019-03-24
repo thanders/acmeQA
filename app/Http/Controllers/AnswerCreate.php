@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
 
 // A controller for handling the Admin Control Panel's question creation form POST messages

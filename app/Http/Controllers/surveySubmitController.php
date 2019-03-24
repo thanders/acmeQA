@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 // A controller for handling the Admin Control Panel's question creation form POST messages
 class surveySubmitController extends Controller {
 
     public function insertUserSubmission(Request $request){
+
+        // Create a long random string to serve as a "unique" userID
+        $userID = Str::random(20);
 
         $rowidarr = DB::select('select rowid from Questions;');
 
@@ -32,7 +34,7 @@ class surveySubmitController extends Controller {
 
             if ($response){
 
-                DB::table('responses')->insert(['ResponseID' => $responseID, 'Response' => $response]);
+                DB::table('responses')->insert(['userID'=>$userID, 'ResponseID' => $responseID, 'Response' => $response]);
 
                 $responseText="Thanks for answering the quiz questions. A summary of your submission is below (Not yet implemented)";
 
@@ -40,6 +42,7 @@ class surveySubmitController extends Controller {
 
             else{
                 echo "There was an error submitting your survey response. Sorry";
+
             }
 
             }

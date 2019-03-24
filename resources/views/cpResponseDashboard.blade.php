@@ -19,15 +19,13 @@
     <!-- Include admin menu -->
     @include('menu.adminMenuDashboard')
 
+    <div class="mainUI">
 
-    Control Panel - Response Dashboard
+    <h3> Control Panel - Response Dashboard </h3>
 
+    Number of individual survey submissions: <b>{{ $stats['numResponses'] }}</b>
 
-
-
-
-
-
+    </div>
 
     </body>
 </html>
