@@ -32,8 +32,7 @@ class surveySubmitController extends Controller {
                 }
             }
 
-
-        //return redirect()->to('/cpMaintenance');
+        return redirect()->back()->with('success', ['Thanks for answering the quiz questions. A summary of your submission is below (Not yet implemented']);
 
     }
 
