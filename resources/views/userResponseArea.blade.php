@@ -115,7 +115,7 @@
                 // Submission buttons
                 echo "<ul class='submission'>";
                     echo "<li><button type='submit' value='submit'>Submit survey</button></li>";
-                    echo "<li>"?> @include('buttons.resetButton')<?php echo "</li>";
+                    echo "<li>"?> @include('buttons.resetButtonAdminQuestions')<?php echo "</li>";
                     echo"</ul>";
                     echo "</form>";
 
