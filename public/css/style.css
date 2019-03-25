@@ -4,7 +4,7 @@ html, body {
     background-color: #fff;
     color: #636b6f;
     font-family: 'Nunito', sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     height: 10vh;
     margin: 0;
 }
@@ -22,7 +22,7 @@ ul.topnav li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 12px;
     text-decoration: none;
     position:relative;
 }
@@ -124,21 +124,22 @@ table.admin{
 
 td.admin th.admin{
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
 
 }
 
+
 th.admin{
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     text-align: left;
     background-color: #cc6ce6;
     color: white;
 }
 
 th.adminSubHeading{
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     text-align: left;
     background-color: #e3b96b;
     color: white;
