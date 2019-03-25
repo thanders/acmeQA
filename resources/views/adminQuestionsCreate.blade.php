@@ -94,7 +94,7 @@ else{
     echo "<input type='radio' name='answerType' value='mcq-radio' required> Multiple Choice - Radio<br>";
     echo "<input type='radio' name='answerType' value='mcq-dropDown' required> Multiple Choice - Drop-down<br>";
     echo "<input type='radio' name='answerType' value='text' required> Text<br>";
-    echo "<input type='radio' name='answerType' value='number'> Number<br>";
+    echo "<input type='radio' name='answerType' value='number' required> Number<br>";
     // Submission buttons
     echo "<ul class='submission'>";
     echo "<li><button type='submit'>Create question</button></li>";
